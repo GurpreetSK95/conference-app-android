@@ -87,6 +87,7 @@ dependencies {
 
     //region Version
     final junit = "4.12"
+    final mockito = "2.21.0"
     final support = '1.0.0'
     final appCompat = '1.0.2'
     final firebaseDatabase = '16.0.5'
@@ -107,6 +108,7 @@ dependencies {
 
     // TESTING
     testImplementation "junit:junit:$junit"
+    testImplementation "org.mockito:mockito-core:$mockito"
 
     // Support
     implementation "androidx.appcompat:appcompat:$appCompat"
