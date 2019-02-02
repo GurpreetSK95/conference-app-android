@@ -5,6 +5,7 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import com.bumptech.glide.Glide
 import com.mentalmachines.droidcon_boston.R
 import com.mentalmachines.droidcon_boston.data.FirebaseDatabase.EventSpeaker
@@ -18,6 +19,19 @@ import kotlinx.android.synthetic.main.speaker_detail_fragment.*
 
 
 class SpeakerDetailFragment : androidx.fragment.app.Fragment() {
+    companion object {
+        fun instantiate(
+            arguments: Bundle,
+            activity: FragmentActivity?
+        ) {
+            val speakerDetailFragment = SpeakerDetailFragment()
+            speakerDetailFragment.arguments = arguments
+
+            val fragmentManager = activity?.supportFragmentManager
+            fragmentManager?.beginTransaction()?.add(R.id.fragment_container, speakerDetailFragment)
+                ?.addToBackStack(null)?.commit()
+        }
+    }
 
     private val firebaseHelper = FirebaseHelper.instance
 
