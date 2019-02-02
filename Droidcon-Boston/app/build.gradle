@@ -89,6 +89,7 @@ dependencies {
     final junit = "4.12"
     final support = '1.0.0'
     final appCompat = '1.0.2'
+    final lifecycleVersion = '2.0.0'
     final firebaseDatabase = '16.0.5'
     final firebaseCore = '16.0.6'
     final firebaseMessaging = '17.3.4'
@@ -107,6 +108,7 @@ dependencies {
 
     // TESTING
     testImplementation "junit:junit:$junit"
+    testImplementation "androidx.arch.core:core-testing:$lifecycleVersion"
 
     // Support
     implementation "androidx.appcompat:appcompat:$appCompat"
@@ -114,6 +116,9 @@ dependencies {
     implementation "androidx.cardview:cardview:$support"
     implementation "com.google.android.material:material:$support"
     implementation "androidx.browser:browser:$support"
+
+    // Architecture components
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
 
     // Firebase
     implementation "com.google.firebase:firebase-messaging:$firebaseMessaging"
